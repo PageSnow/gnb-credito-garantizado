@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GNB · Acuerdo Tripartito</title>
+<link rel="stylesheet" href="styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <div class="logo-area">
+      <div class="logo-mark">GNB</div>
+      <div class="logo-text">GNB Sudameris<span class="logo-sub">Acuerdo Tripartito · Jurídico / Riesgo</span></div>
+    </div>
+    <nav class="header-nav">
+      <a href="index.html" class="nav-link">Solicitar crédito</a>
+      <a href="arquitectura.html" class="nav-link">Arquitectura TI</a>
+      <a href="snowflake.html" class="nav-link">Dashboard Datos</a>
+      <a href="acuerdo.html" class="nav-link active">Acuerdo tripartito</a>
+    </nav>
+    <div class="header-right"><span class="header-badge">⚖️ Jurídico / Riesgo</span></div>
+  </div>
+</header>
+
+<div class="page-hero" style="background:linear-gradient(135deg,#1a2e1a,#1a3a2a)">
+  <div class="page-hero-inner">
+    <span class="hero-tag" style="background:rgba(26,122,74,0.2);border-color:rgba(26,122,74,0.4);color:#86efac">Entregable · Jurídico, Riesgo y Negociación</span>
+    <h1 class="hero-title" style="font-size:1.8rem">Acuerdo Tripartito de Servicios</h1>
+    <p class="hero-sub">GNB Sudameris · Fiduciarias · Rentas Vitalicias · Confecámaras · Marco jurídico y operativo del producto</p>
+  </div>
+</div>
+
+<main class="acuerdo-main">
+
+  <!-- PARTES -->
+  <div class="acuerdo-section">
+    <h2 class="acuerdo-title">Partes del acuerdo y roles</h2>
+    <div class="partes-grid">
+      <div class="parte-card" style="border-top-color:#C8102E">
+        <div class="parte-icon">🏦</div>
+        <div class="parte-nombre">GNB Sudameris S.A.</div>
+        <div class="parte-rol">Acreedor</div>
+        <div class="parte-desc">Otorga el crédito, administra el riesgo de la cartera, ejecuta la garantía ante incumplimiento, define políticas de cobertura y monitorea diariamente el portafolio vía Snowflake.</div>
+      </div>
+      <div class="parte-card" style="border-top-color:#185FA5">
+        <div class="parte-icon">📋</div>
+        <div class="parte-nombre">Fiduciarias</div>
+        <div class="parte-rol">Custodios de garantía</div>
+        <div class="parte-desc">Skandia · Protección · Porvenir. Confirman saldos en tiempo real vía API, bloquean recursos por instrucción del banco, ejecutan giro ante mora o caída de cobertura dentro de 2 horas hábiles.</div>
+      </div>
+      <div class="parte-card" style="border-top-color:#1a7a4a">
+        <div class="parte-icon">👥</div>
+        <div class="parte-nombre">Rentas Vitalicias S.A.</div>
+        <div class="parte-rol">Administrador de rentas</div>
+        <div class="parte-desc">Certifica el estado de pensionados, confirma resolución de pensión vigente, gestiona la retención contingente aplicable según el tipo de portafolio del cliente.</div>
+      </div>
+      <div class="parte-card" style="border-top-color:#8a6200">
+        <div class="parte-icon">🏢</div>
+        <div class="parte-nombre">Confecámaras · SIGaR</div>
+        <div class="parte-rol">Registro de garantías</div>
+        <div class="parte-desc">Registra y da publicidad a las garantías mobiliarias (Ley 1676). Vigencia de 5 años por inscripción — optimiza costos operativos eliminando renovación en cada prórroga anual.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLUJO -->
+  <div class="acuerdo-section">
+    <h2 class="acuerdo-title">Flujo completo del acuerdo — 4 fases</h2>
+    <div class="flow-timeline">
+
+      <div class="flow-phase">
+        <div class="flow-phase-header" style="background:#C8102E">
+          <span class="flow-phase-num">Fase 1</span>
+          <span>Acuerdo de servicios previo (one-time)</span>
+        </div>
+        <div class="flow-phase-body">
+          <div class="flow-two">
+            <div class="flow-box" onclick="expandDetail('d1')">
+              <div class="flow-box-title">📑 Acuerdo marco banco–fiduciaria</div>
+              <div class="flow-box-detail">Entrega online saldos · bloqueo · retención contingente · SLA 3s</div>
+              <div class="flow-detail-expanded" id="d1">
+                <ul>
+                  <li>Cláusula de entrega de información online: saldos diarios + tiempo real bajo demanda</li>
+                  <li>Retención contingente por tipo de portafolio: 15% moderado · 10% bajo · 0% CDT</li>
+                  <li>SLA respuesta API: máximo 3 segundos para consultas en tiempo real</li>
+                  <li>Protocolo de bloqueo: instrucción del banco → confirmación fiduciaria en &lt;1 hora</li>
+                  <li>Autenticación: certificados digitales + firma HMAC-SHA256</li>
+                </ul>
+              </div>
+            </div>
+            <div class="flow-box" onclick="expandDetail('d2')">
+              <div class="flow-box-title">🏢 Integración Confecámaras · SIGaR</div>
+              <div class="flow-box-detail">Registro garantías mobiliarias · Ley 1676 · 5 años</div>
+              <div class="flow-detail-expanded" id="d2">
+                <ul>
+                  <li>Vigencia de inscripción: 5 años desde el primer otorgamiento</li>
+                  <li>Aplica para todas las prórrogas anuales dentro del período de 5 años</li>
+                  <li>Costo de registro inicial asumido por el banco</li>
+                  <li>Ahorro estimado por operación: ~$320.000 COP en costos notariales</li>
+                  <li>API SIGaR para registro y consulta de estado en tiempo real</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flow-connector">↓</div>
+
+      <div class="flow-phase">
+        <div class="flow-phase-header" style="background:#185FA5">
+          <span class="flow-phase-num">Fase 2</span>
+          <span>Inicio de solicitud por el cliente (100% digital)</span>
+        </div>
+        <div class="flow-phase-body">
+          <div class="flow-linear">
+            <div class="flow-step">
+              <div class="flow-step-num" style="background:#185FA5">1</div>
+              <div><div class="flow-step-title">Cliente ingresa al portal GNB</div><div class="flow-step-detail">Web · app · 24/7 · sin desplazamiento · sin papel</div></div>
+            </div>
+            <div class="flow-step-arrow">→</div>
+            <div class="flow-step">
+              <div class="flow-step-num" style="background:#185FA5">2</div>
+              <div><div class="flow-step-title">Consulta saldo fiduciaria (API tiempo real)</div><div class="flow-step-detail">Solo portafolios riesgo moderado o bajo · retención contingente</div></div>
+            </div>
+            <div class="flow-step-arrow">→</div>
+            <div class="flow-step">
+              <div class="flow-step-num" style="background:#185FA5">3</div>
+              <div><div class="flow-step-title">Oferta generada · simulador</div><div class="flow-step-detail">Monto · tasa IBR+pb · plazo bullet · cliente acepta</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flow-connector">↓</div>
+
+      <div class="flow-phase">
+        <div class="flow-phase-header" style="background:#8a6200">
+          <span class="flow-phase-num">Fase 3</span>
+          <span>Validaciones simultáneas (automatizadas en paralelo)</span>
+        </div>
+        <div class="flow-phase-body">
+          <div class="flow-parallel">
+            <div class="flow-box-sm" onclick="expandDetail('d3')">
+              <div class="flow-box-title">🔐 Verificación identidad</div>
+              <div class="flow-box-detail">Biometría · RNEC · OTP</div>
+              <div class="flow-detail-expanded" id="d3">
+                <ul>
+                  <li>Dactiloscopía con AFIS Colombia</li>
+                  <li>Validación RNEC en tiempo real</li>
+                  <li>Video liveness check anti-deepfake</li>
+                  <li>OTP firmado (Decreto 2364)</li>
+                </ul>
+              </div>
+            </div>
+            <div class="flow-parallel-plus">+</div>
+            <div class="flow-box-sm">
+              <div class="flow-box-title">📊 Score crediticio</div>
+              <div class="flow-box-detail">TransUnion · DataCrédito</div>
+            </div>
+            <div class="flow-parallel-plus">+</div>
+            <div class="flow-box-sm" onclick="expandDetail('d4')">
+              <div class="flow-box-title">✍️ Firma electrónica</div>
+              <div class="flow-box-detail">PLA15 · pagaré · garantías</div>
+              <div class="flow-detail-expanded" id="d4">
+                <ul>
+                  <li>Formato PLA15 GNB Sudameris</li>
+                  <li>Contrato marco de bloqueo</li>
+                  <li>Pagaré en blanco + carta instrucciones</li>
+                  <li>Grabación confirmación de condiciones</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="flow-merge">↓ Resultado convergente ↓</div>
+          <div class="flow-box" style="border-color:rgba(26,122,74,0.4)" onclick="expandDetail('d5')">
+            <div class="flow-box-title" style="color:#1a7a4a">🔒 Bloqueo garantía fiduciaria + Registro Confecámaras</div>
+            <div class="flow-box-detail">Simultáneo · certificado digital emitido · folio garantía · vigencia 5 años</div>
+            <div class="flow-detail-expanded" id="d5">
+              <ul>
+                <li>Fiduciaria confirma bloqueo con certificado digital numerado</li>
+                <li>SIGaR registra garantía mobiliaria y asigna folio de registro</li>
+                <li>Ambas confirmaciones llegan al orquestador en &lt;60 segundos</li>
+                <li>El cliente recibe notificación por SMS y email</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flow-connector">↓</div>
+
+      <div class="flow-phase">
+        <div class="flow-phase-header" style="background:#1a7a4a">
+          <span class="flow-phase-num">Fase 4</span>
+          <span>Aprobación automática y desembolso</span>
+        </div>
+        <div class="flow-phase-body">
+          <div class="flow-linear">
+            <div class="flow-step">
+              <div class="flow-step-num" style="background:#1a7a4a">✓</div>
+              <div><div class="flow-step-title">Motor aprobación automática</div><div class="flow-step-detail">Cobertura OK · identidad OK · docs OK · garantía registrada</div></div>
+            </div>
+            <div class="flow-step-arrow">→</div>
+            <div class="flow-step">
+              <div class="flow-step-num" style="background:#1a7a4a">💳</div>
+              <div><div class="flow-step-title">Desembolso ACH · giro inmediato</div><div class="flow-step-detail">Cuenta verificada · anti-fraude · confirmación SMS/email</div></div>
+            </div>
+            <div class="flow-step-arrow">→</div>
+            <div class="flow-step">
+              <div class="flow-step-num" style="background:#1a7a4a">❄️</div>
+              <div><div class="flow-step-title">Monitoreo Snowflake activo</div><div class="flow-step-detail">Alertas diarias automáticas · reporte SFC · conciliación</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CLÁUSULAS CRÍTICAS -->
+  <div class="acuerdo-section">
+    <h2 class="acuerdo-title">Cláusulas críticas del acuerdo</h2>
+    <div class="clausulas-grid">
+      <div class="clausula-card">
+        <div class="clausula-num" style="background:#C8102E">01</div>
+        <div class="clausula-title">Fuente líquida de pago</div>
+        <div class="clausula-text">Los recursos dados en garantía constituyen fuente líquida de pago del crédito. La fiduciaria ejecutará el giro dentro de las 2 horas hábiles siguientes a la instrucción del banco, sin necesidad de orden judicial, ante: mora del cliente D+1, caída de cobertura bajo 100%, o cualquier riesgo identificado por el banco.</div>
+      </div>
+      <div class="clausula-card">
+        <div class="clausula-num" style="background:#185FA5">02</div>
+        <div class="clausula-title">Entrega de información online</div>
+        <div class="clausula-text">Las fiduciarias entregarán diariamente (y en tiempo real bajo demanda) el saldo certificado, la retención contingente aplicable y la variación porcentual del portafolio en las últimas 24 horas, vía API REST con autenticación por certificados digitales y firma HMAC-SHA256. SLA máximo: 3 segundos.</div>
+      </div>
+      <div class="clausula-card">
+        <div class="clausula-num" style="background:#1a7a4a">03</div>
+        <div class="clausula-title">Registro garantías a 5 años</div>
+        <div class="clausula-text">La garantía mobiliaria se registrará en Confecámaras con vigencia de 5 años desde el primer otorgamiento. Esta vigencia cubre todas las prórrogas anuales dentro del período, eliminando renovación en cada prórroga. Ahorro estimado por operación: $320.000 COP. El banco asume el costo del registro inicial.</div>
+      </div>
+      <div class="clausula-card">
+        <div class="clausula-num" style="background:#8a6200">04</div>
+        <div class="clausula-title">Política de riesgo moderado</div>
+        <div class="clausula-text">Solo aplican fondos de pensión voluntaria con portafolios de riesgo moderado o bajo. Portafolios de renta variable de alto riesgo quedan expresamente excluidos. Si el cliente cambia su perfil de inversión a uno de alto riesgo, la fiduciaria debe notificar al banco en un plazo máximo de 24 horas.</div>
+      </div>
+    </div>
+  </div>
+
+</main>
+<script src="app.js"></script>
+<script>
+function expandDetail(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.style.display = el.style.display === 'block' ? 'none' : 'block';
+}
+</script>
+</body>
+</html>

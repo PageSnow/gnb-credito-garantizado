@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GNB · Arquitectura Técnica</title>
+<link rel="stylesheet" href="styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <div class="logo-area">
+      <div class="logo-mark">GNB</div>
+      <div class="logo-text">GNB Sudameris<span class="logo-sub">Arquitectura Técnica · TI</span></div>
+    </div>
+    <nav class="header-nav">
+      <a href="index.html" class="nav-link">Solicitar crédito</a>
+      <a href="arquitectura.html" class="nav-link active">Arquitectura TI</a>
+      <a href="snowflake.html" class="nav-link">Dashboard Datos</a>
+      <a href="acuerdo.html" class="nav-link">Acuerdo tripartito</a>
+    </nav>
+    <div class="header-right"><span class="header-badge">🏗️ Para TI / Arquitectura</span></div>
+  </div>
+</header>
+
+<div class="page-hero" style="background:linear-gradient(135deg,#1a1a2e,#16213e)">
+  <div class="page-hero-inner">
+    <span class="hero-tag">Entregable técnico · Área de Tecnología y Arquitectura</span>
+    <h1 class="hero-title" style="font-size:1.8rem">Arquitectura del sistema — Crédito Garantizado Digital</h1>
+    <p class="hero-sub">Crédito garantizado con fondos de pensión voluntaria y CDT · GNB Sudameris Colombia S.A. · v1.0 Mayo 2025</p>
+  </div>
+</div>
+
+<main class="arch-main">
+
+  <div class="arch-legend">
+    <div class="leg-item"><div class="leg-dot" style="background:#C8102E"></div> Sistemas GNB</div>
+    <div class="leg-item"><div class="leg-dot" style="background:#185FA5"></div> Sistemas externos / fiduciarias</div>
+    <div class="leg-item"><div class="leg-dot" style="background:#1a7a4a"></div> Capa de datos / Snowflake</div>
+    <div class="leg-item"><div class="leg-dot" style="background:#8a6200"></div> Seguridad / identidad</div>
+    <div class="leg-item"><div class="leg-dot" style="background:#555"></div> Infraestructura</div>
+  </div>
+
+  <!-- CAPA 1 -->
+  <div class="arch-layer">
+    <div class="arch-layer-label">📱 Capa 1 — Canal cliente</div>
+    <div class="arch-boxes">
+      <div class="arch-box gnb">
+        <div class="arch-box-name">Portal web / App GNB</div>
+        <div class="arch-box-detail">React SPA · CDN · PWA · responsive</div>
+        <span class="arch-tag gnb-tag">GNB Digital</span>
+      </div>
+      <div class="arch-box gnb">
+        <div class="arch-box-name">Onboarding digital</div>
+        <div class="arch-box-detail">SDK liveness + biometría · nuevos clientes</div>
+        <span class="arch-tag gnb-tag">GNB Onboarding</span>
+      </div>
+      <div class="arch-box infra">
+        <div class="arch-box-name">Notificaciones</div>
+        <div class="arch-box-detail">Email · SMS · push · OTP</div>
+        <span class="arch-tag infra-tag">SendGrid / AWS SNS</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="arch-flow-arrow">HTTPS / TLS 1.3 · JWT Bearer Token</div>
+
+  <!-- CAPA 2 -->
+  <div class="arch-layer">
+    <div class="arch-layer-label">⚙️ Capa 2 — API Gateway y orquestación</div>
+    <div class="arch-boxes">
+      <div class="arch-box gnb">
+        <div class="arch-box-name">API Gateway</div>
+        <div class="arch-box-detail">Rate limiting · auth · routing · logging</div>
+        <span class="arch-tag gnb-tag">Kong / AWS API GW</span>
+      </div>
+      <div class="arch-box gnb">
+        <div class="arch-box-name">Orquestador crédito</div>
+        <div class="arch-box-detail">Microservicio · Saga pattern · estado solicitud</div>
+        <span class="arch-tag gnb-tag">Node.js / Java</span>
+      </div>
+      <div class="arch-box gnb">
+        <div class="arch-box-name">Bus de eventos</div>
+        <div class="arch-box-detail">Solicitud iniciada · garantía bloqueada · desembolso</div>
+        <span class="arch-tag gnb-tag">Kafka / RabbitMQ</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="arch-flow-arrow">REST / Webhooks firmados HMAC-SHA256 · ISO 20022</div>
+
+  <!-- CAPA 3 -->
+  <div class="arch-layer">
+    <div class="arch-layer-label">🏦 Capa 3 — Sistemas core y externos</div>
+    <div class="arch-boxes">
+      <div class="arch-box gnb">
+        <div class="arch-box-name">CORE bancario GNB</div>
+        <div class="arch-box-detail">Límites · pagaré · contabilización</div>
+        <span class="arch-tag gnb-tag">T24 / Cobis</span>
+      </div>
+      <div class="arch-box ext">
+        <div class="arch-box-name">API Fiduciarias</div>
+        <div class="arch-box-detail">Skandia · Protección · Porvenir · saldos + bloqueo</div>
+        <span class="arch-tag ext-tag">REST / SOAP legacy</span>
+      </div>
+      <div class="arch-box ext">
+        <div class="arch-box-name">Confecámaras · SIGaR</div>
+        <div class="arch-box-detail">Garantías mobiliarias · Ley 1676 · 5 años</div>
+        <span class="arch-tag ext-tag">SIGaR API</span>
+      </div>
+      <div class="arch-box ext">
+        <div class="arch-box-name">ACH Colombia</div>
+        <div class="arch-box-detail">Desembolso mismo día · anti-fraude</div>
+        <span class="arch-tag ext-tag">ISO 20022</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="arch-flow-arrow">Validación identidad · Score crediticio · Firma digital</div>
+
+  <!-- CAPA 4 -->
+  <div class="arch-layer">
+    <div class="arch-layer-label">🔐 Capa 4 — Seguridad e identidad</div>
+    <div class="arch-boxes">
+      <div class="arch-box sec">
+        <div class="arch-box-name">Biometría + liveness</div>
+        <div class="arch-box-detail">Dactiloscopía · face match · anti-deepfake · RNEC</div>
+        <span class="arch-tag sec-tag">Jumio / Truora</span>
+      </div>
+      <div class="arch-box sec">
+        <div class="arch-box-name">Centrales de riesgo</div>
+        <div class="arch-box-detail">TransUnion · DataCrédito · score real time</div>
+        <span class="arch-tag sec-tag">REST API</span>
+      </div>
+      <div class="arch-box sec">
+        <div class="arch-box-name">Firma electrónica</div>
+        <div class="arch-box-detail">PLA15 · OTP · Decreto 2364</div>
+        <span class="arch-tag sec-tag">DocuSign / Certilegis</span>
+      </div>
+      <div class="arch-box sec">
+        <div class="arch-box-name">Anti-fraude desembolso</div>
+        <div class="arch-box-detail">Cuenta pre-verificada · token montos &gt;$50M</div>
+        <span class="arch-tag sec-tag">Motor de reglas</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="arch-flow-arrow">Streams CDC · Kafka Connect · Ingesta batch nocturna · dbt</div>
+
+  <!-- CAPA 5 -->
+  <div class="arch-layer">
+    <div class="arch-layer-label">❄️ Capa 5 — Datos y analítica (Snowflake)</div>
+    <div class="arch-boxes">
+      <div class="arch-box data">
+        <div class="arch-box-name">Snowflake — Garantías</div>
+        <div class="arch-box-detail">Saldos diarios fiduciarias · cobertura · alertas</div>
+        <span class="arch-tag data-tag">Capa analítica</span>
+      </div>
+      <div class="arch-box data">
+        <div class="arch-box-name">Snowflake — Créditos</div>
+        <div class="arch-box-detail">Portfolio activo · moras · tasas IBR histórico</div>
+        <span class="arch-tag data-tag">DWH operacional</span>
+      </div>
+      <div class="arch-box data">
+        <div class="arch-box-name">Dashboard riesgo</div>
+        <div class="arch-box-detail">Alertas cobertura &lt;110% · reporte diario</div>
+        <span class="arch-tag data-tag">Tableau / Sigma</span>
+      </div>
+      <div class="arch-box data">
+        <div class="arch-box-name">Auditoría y logs</div>
+        <div class="arch-box-detail">Trazabilidad completa · SFC · SARLAFT</div>
+        <span class="arch-tag data-tag">Immutable logs</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLAs + NORMATIVA -->
+  <div class="arch-notes">
+    <div class="arch-note-card">
+      <div class="arch-note-title">⏱️ SLAs objetivo</div>
+      <ul class="arch-note-list">
+        <li>Confirmación saldo fiduciaria: <strong>&lt;3s</strong></li>
+        <li>Score crediticio: <strong>&lt;2s</strong></li>
+        <li>Registro Confecámaras: <strong>&lt;30s</strong></li>
+        <li>Desembolso ACH: <strong>mismo día hábil</strong></li>
+        <li>Sincronización Snowflake: <strong>&lt;1 hora (nocturno)</strong></li>
+      </ul>
+    </div>
+    <div class="arch-note-card">
+      <div class="arch-note-title">🔄 Patrones de resiliencia</div>
+      <ul class="arch-note-list">
+        <li>Circuit breaker en APIs fiduciarias</li>
+        <li>Retry con backoff exponencial (3x)</li>
+        <li>Fallback a certificación manual si API no disponible</li>
+        <li>Saga compensatoria para rollback distribuido</li>
+        <li>Cola async para Confecámaras</li>
+      </ul>
+    </div>
+    <div class="arch-note-card">
+      <div class="arch-note-title">⚖️ Marco normativo</div>
+      <ul class="arch-note-list">
+        <li>SARLAFT · Circular 007 SFC</li>
+        <li>Ley 1676 — garantías mobiliarias</li>
+        <li>Decreto 2364 — firma electrónica</li>
+        <li>Ley 1581 — datos personales</li>
+        <li>ISO 27001 — seguridad de la información</li>
+      </ul>
+    </div>
+    <div class="arch-note-card">
+      <div class="arch-note-title">🗓️ Roadmap estimado</div>
+      <ul class="arch-note-list">
+        <li><strong>Fase 0</strong> — Acuerdos y normativa: 2–3 meses</li>
+        <li><strong>Fase 1</strong> — Desarrollo portal + APIs: 3–4 meses</li>
+        <li><strong>Fase 2</strong> — CORE + Snowflake: 2–3 meses</li>
+        <li><strong>Fase 3</strong> — QA + piloto: 2 meses</li>
+        <li><strong>Fase 4</strong> — Producción: 2–3 meses</li>
+      </ul>
+    </div>
+  </div>
+
+</main>
+<script src="app.js"></script>
+</body>
+</html>
