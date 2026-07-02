@@ -1,260 +1,634 @@
 <!DOCTYPE html>
+<!-- Portal de Crédito Garantizado Digital · colores institucionales GNB Sudameris -->
+<!-- Co-authored with CoCo -->
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GNB · Acuerdo Tripartito</title>
+<title>GNB Sudameris · Crédito Garantizado Digital</title>
 <link rel="stylesheet" href="styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- ═══ GNB Sudameris · Colores Institucionales ═══ -->
+<style>
+  :root {
+    --gnb-navy:       #0b2a5b;
+    --gnb-navy-light: #163d73;
+    --gnb-green:      #7AC142;
+    --gnb-green-dark: #5a9e2f;
+    --gnb-green-text: #3d8a1a;
+    --gnb-bg:         #f8f9fc;
+    --gnb-bg-grad:    #e8ecf4;
+  }
+
+  /* Header */
+  .site-header { background: var(--gnb-navy); }
+  .logo-mark { background: var(--gnb-green); color: white; }
+  .nav-link:hover, .nav-link.active {
+    color: var(--gnb-green);
+    border-bottom-color: var(--gnb-green);
+  }
+
+  /* Hero */
+  .product-hero { background: linear-gradient(135deg, var(--gnb-navy), var(--gnb-navy-light)); }
+  .hero-tag {
+    background: rgba(122,193,66,0.15);
+    color: var(--gnb-green-text);
+    border-color: rgba(122,193,66,0.4);
+  }
+  .hero-stat-val { color: var(--gnb-green); }
+
+  /* Quick card */
+  .quick-card { border-top: 3px solid var(--gnb-green); }
+  .quick-steps li::marker { color: var(--gnb-green); }
+
+  /* Buttons */
+  .btn-primary {
+    background: linear-gradient(135deg, var(--gnb-navy), var(--gnb-navy-light));
+    color: white; border: none;
+  }
+  .btn-primary:hover { background: linear-gradient(135deg, var(--gnb-green-dark), var(--gnb-green)); }
+  .btn-secondary { border-color: rgba(11,42,91,0.3); color: var(--gnb-navy); }
+
+  /* Progress bar */
+  .progress-bar-fill { background: linear-gradient(90deg, var(--gnb-navy), var(--gnb-green)); }
+
+  /* Stepper */
+  .step-num {
+    background: rgba(11,42,91,0.08);
+    color: var(--gnb-navy);
+    border-color: rgba(11,42,91,0.2);
+  }
+  .done-num { background: var(--gnb-green); color: white; border-color: var(--gnb-green-dark); }
+  .step-item.done span { color: var(--gnb-green-text); }
+  .step-item.active .step-num { background: var(--gnb-navy); color: white; }
+
+  /* Garantía cards */
+  .garantia-card.selected {
+    border-color: var(--gnb-green);
+    box-shadow: 0 0 0 3px rgba(122,193,66,0.15);
+  }
+  .check-mark { color: var(--gnb-green); }
+  .metric-val { color: var(--gnb-navy); }
+
+  /* Badges */
+  .badge-ok  { background: rgba(122,193,66,0.12); color: var(--gnb-green-text); border-color: rgba(122,193,66,0.4); }
+  .badge-info { background: rgba(11,42,91,0.08); color: var(--gnb-navy); border-color: rgba(11,42,91,0.25); }
+
+  /* Checkboxes */
+  .check-label input[type="checkbox"] { accent-color: var(--gnb-green); }
+
+  /* Sidebar */
+  .sidebar-section-title { color: var(--gnb-navy); font-weight: 700; }
+  .client-avatar { background: var(--gnb-navy); color: white; }
+
+  /* Timeline dots */
+  .tl-dot.done  { background: var(--gnb-green); color: white; }
+  .tl-dot.active { background: var(--gnb-navy); color: white; }
+
+  /* Tracking icons */
+  .track-icon.done   { background: rgba(122,193,66,0.15); color: var(--gnb-green-text); }
+  .track-icon.active { background: rgba(11,42,91,0.1);   color: var(--gnb-navy); }
+
+  /* Value highlights */
+  .val-green { color: var(--gnb-green-text); font-weight: 600; }
+
+  /* Bottom nav */
+  .bottom-nav { border-top: 1px solid rgba(11,42,91,0.12); background: var(--gnb-bg); }
+
+  /* Onboarding pills */
+  .onboarding-pill { border-color: rgba(122,193,66,0.4); color: var(--gnb-navy); }
+  .onboarding-pill:hover { background: rgba(122,193,66,0.1); border-color: var(--gnb-green); }
+
+  /* System chips */
+  .system-chip { background: rgba(11,42,91,0.06); color: var(--gnb-navy); border-color: rgba(11,42,91,0.15); }
+
+  /* Range sliders */
+  input[type="range"] { accent-color: var(--gnb-navy); }
+
+  /* Upload zone */
+  .upload-zone { border-color: rgba(122,193,66,0.4); }
+  .upload-zone:hover { background: rgba(122,193,66,0.05); border-color: var(--gnb-green); }
+
+  /* Result card values */
+  .result-val { color: var(--gnb-navy); font-weight: 700; }
+
+  /* Doc icons */
+  .doc-icon.ok { color: var(--gnb-green-text); }
+
+  /* OTP input focus */
+  .otp-input:focus { border-color: var(--gnb-navy); outline: none; box-shadow: 0 0 0 2px rgba(11,42,91,0.15); }
+</style>
 </head>
 <body>
+
+<!-- ═══════════════════════════ HEADER ═══════════════════════════ -->
 <header class="site-header">
   <div class="header-inner">
     <div class="logo-area">
       <div class="logo-mark">GNB</div>
-      <div class="logo-text">GNB Sudameris<span class="logo-sub">Acuerdo Tripartito · Jurídico / Riesgo</span></div>
+      <div class="logo-text">
+        GNB Sudameris
+        <span class="logo-sub">Portal de Crédito Garantizado Digital</span>
+      </div>
     </div>
     <nav class="header-nav">
-      <a href="index.html" class="nav-link">Solicitar crédito</a>
+      <a href="index.html" class="nav-link active">Solicitar crédito</a>
       <a href="arquitectura.html" class="nav-link">Arquitectura TI</a>
       <a href="snowflake.html" class="nav-link">Dashboard Datos</a>
-      <a href="acuerdo.html" class="nav-link active">Acuerdo tripartito</a>
+      <a href="acuerdo.html" class="nav-link">Acuerdo tripartito</a>
     </nav>
-    <div class="header-right"><span class="header-badge">⚖️ Jurídico / Riesgo</span></div>
+    <div class="header-right">
+      <span class="header-badge">🔒 Sesión segura</span>
+      <div class="header-user">JR</div>
+    </div>
   </div>
 </header>
 
-<div class="page-hero" style="background:linear-gradient(135deg,#1a2e1a,#1a3a2a)">
-  <div class="page-hero-inner">
-    <span class="hero-tag" style="background:rgba(26,122,74,0.2);border-color:rgba(26,122,74,0.4);color:#86efac">Entregable · Jurídico, Riesgo y Negociación</span>
-    <h1 class="hero-title" style="font-size:1.8rem">Acuerdo Tripartito de Servicios</h1>
-    <p class="hero-sub">GNB Sudameris · Fiduciarias · Rentas Vitalicias · Confecámaras · Marco jurídico y operativo del producto</p>
+<!-- ═══════════════════════════ HERO ═══════════════════════════ -->
+<section class="product-hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <span class="hero-tag">Nuevo producto digital · GNB Sudameris</span>
+      <h1 class="hero-title">Crédito Garantizado con<br>Fondos de Pensión y CDT</h1>
+      <p class="hero-sub">Desbloquea tus recursos sin liquidar tus inversiones · Esquema Bullet · Hasta 10 años · 100% digital</p>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-val">IBR<span style="font-size:1.1rem">+pb</span></div>
+          <div class="hero-stat-label">Tasa de referencia</div>
+          <div class="hero-stat-sub">+ puntos básicos</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-val">120–130%</div>
+          <div class="hero-stat-label">Cobertura garantía</div>
+          <div class="hero-stat-sub">según tipo de fondo</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-val">&lt;2 hrs</div>
+          <div class="hero-stat-label">Tiempo de proceso</div>
+          <div class="hero-stat-sub">vs 5–10 días anterior</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-val">Bullet</div>
+          <div class="hero-stat-label">Amortización</div>
+          <div class="hero-stat-sub">capital + intereses</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-aside">
+      <div class="quick-card">
+        <div class="quick-card-title">¿Cómo funciona?</div>
+        <ol class="quick-steps">
+          <li>Selecciona tu garantía (FPV o CDT)</li>
+          <li>Autoriza datos y firma digitalmente</li>
+          <li>Verificación de identidad biométrica</li>
+          <li>Carga documentos y registra garantía</li>
+          <li>Simula condiciones y acepta oferta</li>
+          <li>Desembolso ACH en el mismo día</li>
+        </ol>
+        <a href="#stepper-section" class="btn-primary btn-block">Iniciar solicitud →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ PROGRESS ═══════════════════════════ -->
+<div class="progress-bar-wrap">
+  <div class="progress-bar-fill" id="prog-fill" style="width:16.6%"></div>
+</div>
+
+<!-- ═══════════════════════════ STEPPER ═══════════════════════════ -->
+<div class="stepper-wrap" id="stepper-section">
+  <div class="stepper-inner">
+    <div class="step-item done" onclick="goStep(1)">
+      <div class="step-num done-num">✓</div>
+      <span>Selección garantía</span>
+    </div>
+    <div class="step-sep">›</div>
+    <div class="step-item" id="tab-2" onclick="goStep(2)">
+      <div class="step-num" id="snum-2">2</div>
+      <span>Autorización</span>
+    </div>
+    <div class="step-sep">›</div>
+    <div class="step-item" id="tab-3" onclick="goStep(3)">
+      <div class="step-num" id="snum-3">3</div>
+      <span>Identidad</span>
+    </div>
+    <div class="step-sep">›</div>
+    <div class="step-item" id="tab-4" onclick="goStep(4)">
+      <div class="step-num" id="snum-4">4</div>
+      <span>Documentos</span>
+    </div>
+    <div class="step-sep">›</div>
+    <div class="step-item" id="tab-5" onclick="goStep(5)">
+      <div class="step-num" id="snum-5">5</div>
+      <span>Simulador</span>
+    </div>
+    <div class="step-sep">›</div>
+    <div class="step-item" id="tab-6" onclick="goStep(6)">
+      <div class="step-num" id="snum-6">6</div>
+      <span>Desembolso</span>
+    </div>
   </div>
 </div>
 
-<main class="acuerdo-main">
+<!-- ═══════════════════════════ MAIN LAYOUT ═══════════════════════════ -->
+<main class="main-layout">
+  <div class="content-area">
 
-  <!-- PARTES -->
-  <div class="acuerdo-section">
-    <h2 class="acuerdo-title">Partes del acuerdo y roles</h2>
-    <div class="partes-grid">
-      <div class="parte-card" style="border-top-color:#C8102E">
-        <div class="parte-icon">🏦</div>
-        <div class="parte-nombre">GNB Sudameris S.A.</div>
-        <div class="parte-rol">Acreedor</div>
-        <div class="parte-desc">Otorga el crédito, administra el riesgo de la cartera, ejecuta la garantía ante incumplimiento, define políticas de cobertura y monitorea diariamente el portafolio vía Snowflake.</div>
+    <!-- ─── PANEL 1: GARANTÍAS ─── -->
+    <section class="panel active" id="panel-1">
+      <h2 class="panel-title">Garantías disponibles confirmadas</h2>
+      <p class="panel-desc">Los saldos fueron confirmados en tiempo real con las fiduciarias. Selecciona el producto que deseas usar como garantía.</p>
+
+      <div class="garantia-card selected" id="gcard-1" onclick="selectGarantia(1)">
+        <div class="garantia-header">
+          <div class="garantia-icon" style="background:rgba(122,193,66,0.09)">📈</div>
+          <div class="garantia-info">
+            <div class="garantia-name">Fondo Pensión Voluntaria — Portafolio Moderado</div>
+            <div class="garantia-entity">Skandia · Confirmado vía API fiduciaria · <span class="badge badge-ok">Riesgo moderado ✓</span></div>
+          </div>
+          <div class="check-mark" id="check-1">✓</div>
+        </div>
+        <div class="garantia-metrics">
+          <div class="metric-box"><div class="metric-val">$85.4M</div><div class="metric-lbl">Saldo certificado</div></div>
+          <div class="metric-box"><div class="metric-val">$65.7M</div><div class="metric-lbl">Monto máx. préstamo</div></div>
+          <div class="metric-box"><div class="metric-val">130%</div><div class="metric-lbl">Cobertura requerida</div></div>
+          <div class="metric-box"><div class="metric-val">15%</div><div class="metric-lbl">Ret. contingente</div></div>
+        </div>
+        <div class="risk-row">
+          <div class="risk-bar"><div class="risk-fill" style="width:55%;background:#7AC142"></div></div>
+          <span class="risk-label">Riesgo moderado · Portafolio mixto renta fija/variable</span>
+        </div>
       </div>
-      <div class="parte-card" style="border-top-color:#185FA5">
-        <div class="parte-icon">📋</div>
-        <div class="parte-nombre">Fiduciarias</div>
-        <div class="parte-rol">Custodios de garantía</div>
-        <div class="parte-desc">Skandia · Protección · Porvenir. Confirman saldos en tiempo real vía API, bloquean recursos por instrucción del banco, ejecutan giro ante mora o caída de cobertura dentro de 2 horas hábiles.</div>
+
+      <div class="garantia-card" id="gcard-2" onclick="selectGarantia(2)">
+        <div class="garantia-header">
+          <div class="garantia-icon" style="background:rgba(11,42,91,0.07)">📄</div>
+          <div class="garantia-info">
+            <div class="garantia-name">CDT — Banco GNB Sudameris</div>
+            <div class="garantia-entity">Vencimiento: 15-dic-2025 · <span class="badge badge-info">Bloqueado hasta cancelación total</span></div>
+          </div>
+          <div class="check-mark" id="check-2" style="display:none">✓</div>
+        </div>
+        <div class="garantia-metrics">
+          <div class="metric-box"><div class="metric-val">$50.0M</div><div class="metric-lbl">Valor CDT</div></div>
+          <div class="metric-box"><div class="metric-val">$41.6M</div><div class="metric-lbl">Monto máx. préstamo</div></div>
+          <div class="metric-box"><div class="metric-val">120%</div><div class="metric-lbl">Cobertura requerida</div></div>
+          <div class="metric-box"><div class="metric-val">11.5% EA</div><div class="metric-lbl">Tasa CDT</div></div>
+        </div>
+        <div class="risk-row">
+          <div class="risk-bar"><div class="risk-fill" style="width:15%;background:#0b2a5b"></div></div>
+          <span class="risk-label">Riesgo bajo · Renta fija garantizada</span>
+        </div>
       </div>
-      <div class="parte-card" style="border-top-color:#1a7a4a">
-        <div class="parte-icon">👥</div>
-        <div class="parte-nombre">Rentas Vitalicias S.A.</div>
-        <div class="parte-rol">Administrador de rentas</div>
-        <div class="parte-desc">Certifica el estado de pensionados, confirma resolución de pensión vigente, gestiona la retención contingente aplicable según el tipo de portafolio del cliente.</div>
+
+      <div class="alert-box warn">
+        ⚠️ Los saldos se confirman diariamente. Fluctuaciones de mercado pueden ajustar el monto disponible. Política de riesgo moderado aplicada según acuerdo fiduciario.
       </div>
-      <div class="parte-card" style="border-top-color:#8a6200">
-        <div class="parte-icon">🏢</div>
-        <div class="parte-nombre">Confecámaras · SIGaR</div>
-        <div class="parte-rol">Registro de garantías</div>
-        <div class="parte-desc">Registra y da publicidad a las garantías mobiliarias (Ley 1676). Vigencia de 5 años por inscripción — optimiza costos operativos eliminando renovación en cada prórroga anual.</div>
+    </section>
+
+    <!-- ─── PANEL 2: AUTORIZACIÓN ─── -->
+    <section class="panel" id="panel-2">
+      <h2 class="panel-title">Autorización y acuerdo de servicios</h2>
+
+      <div class="consent-box">
+        <div class="consent-header">
+          <div class="consent-icon" style="background:rgba(11,42,91,0.08)">🔐</div>
+          <div class="consent-title">Autorización de tratamiento de datos personales · Ley 1581/2012</div>
+        </div>
+        <p class="consent-text">Autorizo a GNB Sudameris, Skandia, y las demás fiduciarias participantes en el acuerdo de servicio tripartito, a consultar, verificar y compartir mi información financiera, de identidad y de saldos de productos de inversión, exclusivamente para efectos del otorgamiento del presente crédito garantizado.</p>
+        <label class="check-label"><input type="checkbox" checked> Autorizo compartir mis datos con las fiduciarias participantes (Skandia, Protección, Porvenir según aplique)</label>
+        <label class="check-label"><input type="checkbox" checked> Autorizo la consulta en centrales de riesgo (TransUnion, DataCrédito) y validación biométrica</label>
+        <label class="check-label"><input type="checkbox" checked> Autorizo el bloqueo y retención contingente de mi garantía durante la vigencia del crédito</label>
+        <label class="check-label"><input type="checkbox" checked> Acepto el acuerdo tripartito banco–Rentas–fiduciarias y el registro en Confecámaras a 5 años</label>
+      </div>
+
+      <div class="consent-box">
+        <div class="consent-header">
+          <div class="consent-icon" style="background:rgba(11,42,91,0.07)">🏛️</div>
+          <div class="consent-title">Partes del acuerdo de servicios tripartito</div>
+        </div>
+        <div class="systems-row">
+          <span class="system-chip">🏦 GNB Sudameris S.A.</span>
+          <span class="system-chip">📋 Skandia Fiduciaria</span>
+          <span class="system-chip">👥 Rentas Vitalicias S.A.</span>
+          <span class="system-chip">🏢 Confecámaras</span>
+          <span class="system-chip">❄️ Snowflake Data Hub</span>
+        </div>
+        <p class="consent-text">El acuerdo establece: entrega online de saldos certificados, retención contingente automática, notificación inmediata de fluctuaciones, y fuente líquida de pago con giro inmediato vía ACH en caso de mora, incumplimiento o caída de garantía por debajo del 100% de cobertura.</p>
+      </div>
+
+      <div class="consent-box" style="border-color:rgba(122,193,66,0.35)">
+        <div class="consent-header">
+          <div class="consent-icon" style="background:rgba(122,193,66,0.09)">✍️</div>
+          <div class="consent-title" style="color:#3d8a1a">Firma electrónica — PLA15 | OTP vía SMS/Email · Decreto 2364</div>
+        </div>
+        <div class="otp-row">
+          <input type="text" class="otp-input" placeholder="● ● ● ● ● ●" maxlength="6">
+          <button class="btn-secondary" onclick="alert('OTP enviado a su celular registrado')">Reenviar OTP</button>
+        </div>
+        <p class="consent-text" style="margin-top:8px">Ingresa el código de 6 dígitos enviado a su número registrado. El código expira en 5 minutos.</p>
+      </div>
+    </section>
+
+    <!-- ─── PANEL 3: VERIFICACIÓN ─── -->
+    <section class="panel" id="panel-3">
+      <h2 class="panel-title">Verificación de identidad multifactor</h2>
+
+      <div class="verify-list">
+        <div class="verify-item">
+          <div class="verify-icon" style="background:rgba(122,193,66,0.09)">✅</div>
+          <div class="verify-info">
+            <div class="verify-name">Cédula de ciudadanía — validación RNEC</div>
+            <div class="verify-detail">Documento verificado · Registraduría Nacional · sin novedades</div>
+          </div>
+          <span class="badge badge-ok">Validado</span>
+        </div>
+        <div class="verify-item">
+          <div class="verify-icon" style="background:rgba(122,193,66,0.09)">👆</div>
+          <div class="verify-info">
+            <div class="verify-name">Dactiloscopía — huella biométrica</div>
+            <div class="verify-detail">Score biométrico: 98.4% · AFIS Colombia · Tiempo real</div>
+          </div>
+          <span class="badge badge-ok">Validado</span>
+        </div>
+        <div class="verify-item">
+          <div class="verify-icon" style="background:rgba(122,193,66,0.09)">📊</div>
+          <div class="verify-info">
+            <div class="verify-name">Centrales de riesgo — TransUnion / DataCrédito</div>
+            <div class="verify-detail">Score crediticio: 785 · Sin obligaciones en mora · Cupo disponible</div>
+          </div>
+          <span class="badge badge-ok">Aprobado</span>
+        </div>
+        <div class="verify-item">
+          <div class="verify-icon" style="background:rgba(212,160,23,0.12)">🎥</div>
+          <div class="verify-info">
+            <div class="verify-name">Video verificación de identidad (liveness check)</div>
+            <div class="verify-detail">Anti-deepfake · Captura documento + selfie en vivo · GNB Digital Onboarding</div>
+          </div>
+          <span class="badge badge-warn">En proceso</span>
+        </div>
+        <div class="verify-item">
+          <div class="verify-icon" style="background:#f5f5f5">🎙️</div>
+          <div class="verify-info">
+            <div class="verify-name">Confirmación de condiciones — grabación digital</div>
+            <div class="verify-detail">El asesor confirma: tasa, plazo, monto y condiciones · Reemplaza formato físico</div>
+          </div>
+          <span class="badge badge-pending">Pendiente</span>
+        </div>
+        <div class="verify-item">
+          <div class="verify-icon" style="background:#f5f5f5">📒</div>
+          <div class="verify-info">
+            <div class="verify-name">Validación de referencias personales</div>
+            <div class="verify-detail">2 referencias contactadas vía SMS/llamada automatizada</div>
+          </div>
+          <span class="badge badge-pending">Pendiente</span>
+        </div>
+      </div>
+
+      <div class="integrations-box">
+        <div class="integrations-title">Integrado con:</div>
+        <div class="systems-row">
+          <span class="system-chip">📱 GNB Onboarding Digital</span>
+          <span class="system-chip">🏛️ RNEC</span>
+          <span class="system-chip">📈 TransUnion API</span>
+          <span class="system-chip">❄️ Snowflake · Capa analítica</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── PANEL 4: DOCUMENTOS ─── -->
+    <section class="panel" id="panel-4">
+      <h2 class="panel-title">Gestión documental y registro de garantías</h2>
+      <div class="two-col">
+        <div>
+          <h3 class="sub-title">Documentos cargados</h3>
+          <div class="doc-item"><span class="doc-icon ok">✅</span><span class="doc-name">Cédula de ciudadanía · ambas caras</span><span class="badge badge-ok">OK</span></div>
+          <div class="doc-item"><span class="doc-icon ok">✅</span><span class="doc-name">Soportes de ingresos · últimos 3 meses</span><span class="badge badge-ok">OK</span></div>
+          <div class="doc-item"><span class="doc-icon ok">✅</span><span class="doc-name">Contrato de trabajo / resolución pensión</span><span class="badge badge-ok">OK</span></div>
+          <div class="doc-item"><span class="doc-icon warn">⏳</span><span class="doc-name">Certificación saldo fondo (fiduciaria)</span><span class="badge badge-warn">Auto</span></div>
+          <div class="doc-item"><span class="doc-icon warn">⏳</span><span class="doc-name">Formato PLA15 · diligenciado</span><span class="badge badge-warn">Pendiente firma</span></div>
+          <div class="upload-zone" onclick="alert('Seleccionar archivo')">
+            <div class="upload-icon">☁️</div>
+            <div class="upload-label">Arrastra o selecciona documentos adicionales</div>
+            <div class="upload-sub">PDF, JPG, PNG · máx. 10MB por archivo</div>
+          </div>
+        </div>
+        <div>
+          <h3 class="sub-title">Estado de garantías</h3>
+          <div class="status-card" style="border-color:rgba(122,193,66,0.4)">
+            <div class="status-card-title" style="color:#3d8a1a">🔒 Bloqueo en fiduciaria</div>
+            <div class="status-row"><span>Estado</span><span class="val-green">Bloqueado ✓</span></div>
+            <div class="status-row"><span>Monto bloqueado</span><span>$85.4M</span></div>
+            <div class="status-row"><span>Certificado</span><span class="val-green">#F-2024-8821</span></div>
+            <div class="status-row"><span>Vigencia</span><span>5 años</span></div>
+          </div>
+          <div class="status-card" style="border-color:rgba(11,42,91,0.35);margin-top:10px">
+            <div class="status-card-title" style="color:#0b2a5b">🏢 Confecámaras — Registro</div>
+            <div class="status-row"><span>Estado</span><span class="val-warn">En registro</span></div>
+            <div class="status-row"><span>Tipo</span><span>Mobiliaria · Ley 1676</span></div>
+            <div class="status-row"><span>Folio</span><span>#GM-24-00145</span></div>
+            <div class="status-row"><span>Vigencia</span><span class="val-green">5 años (optimizado)</span></div>
+          </div>
+          <div class="alert-box" style="background:rgba(212,160,23,0.08);border-color:rgba(212,160,23,0.4);margin-top:10px">
+            💡 Garantía a 5 años en Confecámaras. Ahorro estimado en costos notariales por prórrogas: <strong>$320.000 COP</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── PANEL 5: SIMULADOR ─── -->
+    <section class="panel" id="panel-5">
+      <h2 class="panel-title">Simulador de condiciones — Crédito garantizado</h2>
+      <div class="two-col">
+        <div>
+          <div class="sim-monto-display">
+            <div class="sim-label">Monto del crédito</div>
+            <div class="sim-val" id="sim-monto">$58,000,000 COP</div>
+          </div>
+          <div class="slider-group">
+            <div class="slider-row">
+              <label>Monto (millones COP)</label>
+              <input type="range" min="10" max="65" value="58" oninput="updateSim()" id="sl-monto">
+              <span id="out-monto">$58M</span>
+            </div>
+            <div class="slider-row">
+              <label>Plazo (meses)</label>
+              <input type="range" min="12" max="120" value="12" step="12" oninput="updateSim()" id="sl-plazo">
+              <span id="out-plazo">12 meses</span>
+            </div>
+            <div class="slider-row">
+              <label>IBR + puntos básicos</label>
+              <input type="range" min="50" max="400" value="180" oninput="updateSim()" id="sl-ibr">
+              <span id="out-ibr">+180 pb</span>
+            </div>
+          </div>
+          <div class="field-group">
+            <label class="field-label">Tipo de tasa</label>
+            <select class="field-select" onchange="updateSim()">
+              <option>IBR + puntos básicos (recomendado)</option>
+              <option>Tasa cartelera fija</option>
+              <option>Amortización francesa mensual</option>
+            </select>
+          </div>
+          <div class="alert-box" style="background:rgba(122,193,66,0.07);border-color:rgba(122,193,66,0.35);margin-top:14px">
+            📊 <strong>Ventaja vs rescate del fondo:</strong> Mantener inversión genera ~8.5% anual estimado vs costo de deuda. El cliente preserva su capital y sus rendimientos futuros.
+          </div>
+        </div>
+        <div>
+          <div class="result-card">
+            <h3 class="sub-title">Resumen del crédito</h3>
+            <div class="result-row"><span>Tasa total E.A.</span><span class="result-val" id="r-tasa">13.30%</span></div>
+            <div class="result-row"><span>Intereses anuales (bullet)</span><span class="result-val" id="r-int">$7,714,000</span></div>
+            <div class="result-row"><span>Capital (vencimiento)</span><span class="result-val" id="r-cap">$58,000,000</span></div>
+            <div class="result-row"><span>Cobertura actual</span><span class="result-val val-green" id="r-cob">147.2%</span></div>
+            <div class="result-row"><span>Plazo máximo</span><span class="result-val">10 años prorrogable</span></div>
+            <div class="result-row"><span>Desembolso vía</span><span class="result-val">ACH mismo día</span></div>
+            <div class="result-row"><span>Registro Confecámaras</span><span class="result-val val-green">5 años ✓</span></div>
+          </div>
+          <div class="risk-policy-box">
+            <div class="sub-title" style="margin-bottom:8px">Política de riesgo aplicada</div>
+            <span class="badge badge-ok">Portafolio moderado ✓</span>
+            <span class="badge badge-info">Cobertura 130%</span>
+            <span class="badge badge-info">Retención 15%</span>
+            <span class="badge badge-warn">Alerta si cae &lt;110%</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── PANEL 6: DESEMBOLSO ─── -->
+    <section class="panel" id="panel-6">
+      <h2 class="panel-title">Desembolso — Aprobación y giro</h2>
+      <div class="two-col">
+        <div>
+          <h3 class="sub-title">Tracking del proceso</h3>
+          <div class="track-list">
+            <div class="track-item done">
+              <div class="track-icon done">✓</div>
+              <div class="track-info">
+                <div class="track-name">Garantía bloqueada — fiduciaria</div>
+                <div class="track-detail">Certificado #F-2024-8821 · 09:14 am</div>
+              </div>
+              <span class="badge badge-ok">Listo</span>
+            </div>
+            <div class="track-item done">
+              <div class="track-icon done">✓</div>
+              <div class="track-info">
+                <div class="track-name">Garantía registrada — Confecámaras</div>
+                <div class="track-detail">Folio #GM-24-00145 · 5 años</div>
+              </div>
+              <span class="badge badge-ok">Listo</span>
+            </div>
+            <div class="track-item done">
+              <div class="track-icon done">✓</div>
+              <div class="track-info">
+                <div class="track-name">Pagaré contabilizado en sistema</div>
+                <div class="track-detail">CORE bancario GNB · Límites creados</div>
+              </div>
+              <span class="badge badge-ok">Listo</span>
+            </div>
+            <div class="track-item active">
+              <div class="track-icon active">⏳</div>
+              <div class="track-info">
+                <div class="track-name">Aprobación área de crédito</div>
+                <div class="track-detail">Validación final automatizada · &lt;15 minutos</div>
+              </div>
+              <span class="badge badge-warn">En curso</span>
+            </div>
+            <div class="track-item pending">
+              <div class="track-icon pending">→</div>
+              <div class="track-info">
+                <div class="track-name">Desembolso vía ACH / GNB</div>
+                <div class="track-detail">Giro inmediato a cuenta verificada · Anti-fraude validado</div>
+              </div>
+              <span class="badge badge-pending">Pendiente</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="status-card" style="border-color:rgba(122,193,66,0.4)">
+            <div class="status-card-title" style="color:#3d8a1a">💳 Cuenta de desembolso</div>
+            <div class="status-row"><span>Banco</span><span>GNB Sudameris</span></div>
+            <div class="status-row"><span>Cuenta</span><span>**** 4821</span></div>
+            <div class="status-row"><span>Tipo</span><span>Cuenta corriente</span></div>
+            <div class="status-row"><span>Titular</span><span>Juan C. Rodríguez</span></div>
+            <div class="status-row"><span>Monto a girar</span><span class="val-green" style="font-weight:600">$58,700,000</span></div>
+            <div class="status-row"><span>Canal</span><span class="val-green">ACH mismo día</span></div>
+          </div>
+          <div class="alert-box warn" style="margin-top:10px">
+            🛡️ <strong>Anti-fraude:</strong> Desembolso solo a cuentas verificadas del titular. Montos &gt;$50M requieren token adicional. BREV disponible para clientes con historial GNB &gt;12 meses.
+          </div>
+          <div class="alerts-box" style="margin-top:10px">
+            <div class="sub-title" style="margin-bottom:8px">Alertas de monitoreo activas</div>
+            <span class="badge badge-warn">⚠️ Cobertura &lt;110%</span>
+            <span class="badge badge-err">🚨 Cobertura &lt;100%</span>
+            <span class="badge badge-info">❄️ Revisión diaria Snowflake</span>
+            <span class="badge badge-warn">⏱️ Mora D+1</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /content-area -->
+
+  <!-- ═══════════════════════════ SIDEBAR ═══════════════════════════ -->
+  <aside class="sidebar">
+
+    <div class="sidebar-card">
+      <div class="sidebar-section-title">👤 Cliente</div>
+      <div class="client-header">
+        <div class="client-avatar">JR</div>
+        <div>
+          <div class="client-name">Juan C. Rodríguez</div>
+          <div class="client-id">CC 79.545.821</div>
+        </div>
+      </div>
+      <div class="status-row"><span>Segmento</span><span>Personal Banca</span></div>
+      <div class="status-row"><span>Vinculación</span><span>8 años</span></div>
+      <div class="status-row"><span>Score</span><span class="val-green">785 / 850</span></div>
+    </div>
+
+    <div class="sidebar-card">
+      <div class="sidebar-section-title">⏱️ Línea de tiempo</div>
+      <div class="timeline">
+        <div class="tl-item done"><div class="tl-dot done">✓</div><div><div class="tl-title">Solicitud iniciada</div><div class="tl-time">Hoy · 08:45 am</div></div></div>
+        <div class="tl-item done"><div class="tl-dot done">✓</div><div><div class="tl-title">Saldo confirmado · Skandia</div><div class="tl-time">08:52 am · API</div></div></div>
+        <div class="tl-item active"><div class="tl-dot active">2</div><div><div class="tl-title">Autorización datos</div><div class="tl-time">En curso</div></div></div>
+        <div class="tl-item pending"><div class="tl-dot pending">3</div><div><div class="tl-title">Biometría y docs</div><div class="tl-time">Est. 15 min</div></div></div>
+        <div class="tl-item pending"><div class="tl-dot pending">→</div><div><div class="tl-title">Desembolso</div><div class="tl-time">Est. &lt;2 horas total</div></div></div>
       </div>
     </div>
-  </div>
 
-  <!-- FLUJO -->
-  <div class="acuerdo-section">
-    <h2 class="acuerdo-title">Flujo completo del acuerdo — 4 fases</h2>
-    <div class="flow-timeline">
-
-      <div class="flow-phase">
-        <div class="flow-phase-header" style="background:#C8102E">
-          <span class="flow-phase-num">Fase 1</span>
-          <span>Acuerdo de servicios previo (one-time)</span>
-        </div>
-        <div class="flow-phase-body">
-          <div class="flow-two">
-            <div class="flow-box" onclick="expandDetail('d1')">
-              <div class="flow-box-title">📑 Acuerdo marco banco–fiduciaria</div>
-              <div class="flow-box-detail">Entrega online saldos · bloqueo · retención contingente · SLA 3s</div>
-              <div class="flow-detail-expanded" id="d1">
-                <ul>
-                  <li>Cláusula de entrega de información online: saldos diarios + tiempo real bajo demanda</li>
-                  <li>Retención contingente por tipo de portafolio: 15% moderado · 10% bajo · 0% CDT</li>
-                  <li>SLA respuesta API: máximo 3 segundos para consultas en tiempo real</li>
-                  <li>Protocolo de bloqueo: instrucción del banco → confirmación fiduciaria en &lt;1 hora</li>
-                  <li>Autenticación: certificados digitales + firma HMAC-SHA256</li>
-                </ul>
-              </div>
-            </div>
-            <div class="flow-box" onclick="expandDetail('d2')">
-              <div class="flow-box-title">🏢 Integración Confecámaras · SIGaR</div>
-              <div class="flow-box-detail">Registro garantías mobiliarias · Ley 1676 · 5 años</div>
-              <div class="flow-detail-expanded" id="d2">
-                <ul>
-                  <li>Vigencia de inscripción: 5 años desde el primer otorgamiento</li>
-                  <li>Aplica para todas las prórrogas anuales dentro del período de 5 años</li>
-                  <li>Costo de registro inicial asumido por el banco</li>
-                  <li>Ahorro estimado por operación: ~$320.000 COP en costos notariales</li>
-                  <li>API SIGaR para registro y consulta de estado en tiempo real</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="flow-connector">↓</div>
-
-      <div class="flow-phase">
-        <div class="flow-phase-header" style="background:#185FA5">
-          <span class="flow-phase-num">Fase 2</span>
-          <span>Inicio de solicitud por el cliente (100% digital)</span>
-        </div>
-        <div class="flow-phase-body">
-          <div class="flow-linear">
-            <div class="flow-step">
-              <div class="flow-step-num" style="background:#185FA5">1</div>
-              <div><div class="flow-step-title">Cliente ingresa al portal GNB</div><div class="flow-step-detail">Web · app · 24/7 · sin desplazamiento · sin papel</div></div>
-            </div>
-            <div class="flow-step-arrow">→</div>
-            <div class="flow-step">
-              <div class="flow-step-num" style="background:#185FA5">2</div>
-              <div><div class="flow-step-title">Consulta saldo fiduciaria (API tiempo real)</div><div class="flow-step-detail">Solo portafolios riesgo moderado o bajo · retención contingente</div></div>
-            </div>
-            <div class="flow-step-arrow">→</div>
-            <div class="flow-step">
-              <div class="flow-step-num" style="background:#185FA5">3</div>
-              <div><div class="flow-step-title">Oferta generada · simulador</div><div class="flow-step-detail">Monto · tasa IBR+pb · plazo bullet · cliente acepta</div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="flow-connector">↓</div>
-
-      <div class="flow-phase">
-        <div class="flow-phase-header" style="background:#8a6200">
-          <span class="flow-phase-num">Fase 3</span>
-          <span>Validaciones simultáneas (automatizadas en paralelo)</span>
-        </div>
-        <div class="flow-phase-body">
-          <div class="flow-parallel">
-            <div class="flow-box-sm" onclick="expandDetail('d3')">
-              <div class="flow-box-title">🔐 Verificación identidad</div>
-              <div class="flow-box-detail">Biometría · RNEC · OTP</div>
-              <div class="flow-detail-expanded" id="d3">
-                <ul>
-                  <li>Dactiloscopía con AFIS Colombia</li>
-                  <li>Validación RNEC en tiempo real</li>
-                  <li>Video liveness check anti-deepfake</li>
-                  <li>OTP firmado (Decreto 2364)</li>
-                </ul>
-              </div>
-            </div>
-            <div class="flow-parallel-plus">+</div>
-            <div class="flow-box-sm">
-              <div class="flow-box-title">📊 Score crediticio</div>
-              <div class="flow-box-detail">TransUnion · DataCrédito</div>
-            </div>
-            <div class="flow-parallel-plus">+</div>
-            <div class="flow-box-sm" onclick="expandDetail('d4')">
-              <div class="flow-box-title">✍️ Firma electrónica</div>
-              <div class="flow-box-detail">PLA15 · pagaré · garantías</div>
-              <div class="flow-detail-expanded" id="d4">
-                <ul>
-                  <li>Formato PLA15 GNB Sudameris</li>
-                  <li>Contrato marco de bloqueo</li>
-                  <li>Pagaré en blanco + carta instrucciones</li>
-                  <li>Grabación confirmación de condiciones</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="flow-merge">↓ Resultado convergente ↓</div>
-          <div class="flow-box" style="border-color:rgba(26,122,74,0.4)" onclick="expandDetail('d5')">
-            <div class="flow-box-title" style="color:#1a7a4a">🔒 Bloqueo garantía fiduciaria + Registro Confecámaras</div>
-            <div class="flow-box-detail">Simultáneo · certificado digital emitido · folio garantía · vigencia 5 años</div>
-            <div class="flow-detail-expanded" id="d5">
-              <ul>
-                <li>Fiduciaria confirma bloqueo con certificado digital numerado</li>
-                <li>SIGaR registra garantía mobiliaria y asigna folio de registro</li>
-                <li>Ambas confirmaciones llegan al orquestador en &lt;60 segundos</li>
-                <li>El cliente recibe notificación por SMS y email</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="flow-connector">↓</div>
-
-      <div class="flow-phase">
-        <div class="flow-phase-header" style="background:#1a7a4a">
-          <span class="flow-phase-num">Fase 4</span>
-          <span>Aprobación automática y desembolso</span>
-        </div>
-        <div class="flow-phase-body">
-          <div class="flow-linear">
-            <div class="flow-step">
-              <div class="flow-step-num" style="background:#1a7a4a">✓</div>
-              <div><div class="flow-step-title">Motor aprobación automática</div><div class="flow-step-detail">Cobertura OK · identidad OK · docs OK · garantía registrada</div></div>
-            </div>
-            <div class="flow-step-arrow">→</div>
-            <div class="flow-step">
-              <div class="flow-step-num" style="background:#1a7a4a">💳</div>
-              <div><div class="flow-step-title">Desembolso ACH · giro inmediato</div><div class="flow-step-detail">Cuenta verificada · anti-fraude · confirmación SMS/email</div></div>
-            </div>
-            <div class="flow-step-arrow">→</div>
-            <div class="flow-step">
-              <div class="flow-step-num" style="background:#1a7a4a">❄️</div>
-              <div><div class="flow-step-title">Monitoreo Snowflake activo</div><div class="flow-step-detail">Alertas diarias automáticas · reporte SFC · conciliación</div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
+    <div class="sidebar-card" style="border-color:rgba(122,193,66,0.35)">
+      <div class="sidebar-section-title" style="color:#3d8a1a">📈 Mejora vs proceso anterior</div>
+      <div class="status-row"><span>Antes</span><span class="val-red">5–10 días</span></div>
+      <div class="status-row"><span>Ahora</span><span class="val-green">&lt; 2 horas</span></div>
+      <div class="status-row"><span>Papel eliminado</span><span class="val-green">100%</span></div>
+      <div class="status-row"><span>Desplazamiento</span><span class="val-green">Cero</span></div>
     </div>
-  </div>
 
-  <!-- CLÁUSULAS CRÍTICAS -->
-  <div class="acuerdo-section">
-    <h2 class="acuerdo-title">Cláusulas críticas del acuerdo</h2>
-    <div class="clausulas-grid">
-      <div class="clausula-card">
-        <div class="clausula-num" style="background:#C8102E">01</div>
-        <div class="clausula-title">Fuente líquida de pago</div>
-        <div class="clausula-text">Los recursos dados en garantía constituyen fuente líquida de pago del crédito. La fiduciaria ejecutará el giro dentro de las 2 horas hábiles siguientes a la instrucción del banco, sin necesidad de orden judicial, ante: mora del cliente D+1, caída de cobertura bajo 100%, o cualquier riesgo identificado por el banco.</div>
-      </div>
-      <div class="clausula-card">
-        <div class="clausula-num" style="background:#185FA5">02</div>
-        <div class="clausula-title">Entrega de información online</div>
-        <div class="clausula-text">Las fiduciarias entregarán diariamente (y en tiempo real bajo demanda) el saldo certificado, la retención contingente aplicable y la variación porcentual del portafolio en las últimas 24 horas, vía API REST con autenticación por certificados digitales y firma HMAC-SHA256. SLA máximo: 3 segundos.</div>
-      </div>
-      <div class="clausula-card">
-        <div class="clausula-num" style="background:#1a7a4a">03</div>
-        <div class="clausula-title">Registro garantías a 5 años</div>
-        <div class="clausula-text">La garantía mobiliaria se registrará en Confecámaras con vigencia de 5 años desde el primer otorgamiento. Esta vigencia cubre todas las prórrogas anuales dentro del período, eliminando renovación en cada prórroga. Ahorro estimado por operación: $320.000 COP. El banco asume el costo del registro inicial.</div>
-      </div>
-      <div class="clausula-card">
-        <div class="clausula-num" style="background:#8a6200">04</div>
-        <div class="clausula-title">Política de riesgo moderado</div>
-        <div class="clausula-text">Solo aplican fondos de pensión voluntaria con portafolios de riesgo moderado o bajo. Portafolios de renta variable de alto riesgo quedan expresamente excluidos. Si el cliente cambia su perfil de inversión a uno de alto riesgo, la fiduciaria debe notificar al banco en un plazo máximo de 24 horas.</div>
-      </div>
+    <div class="sidebar-card">
+      <div class="sidebar-section-title">🚀 ¿No tienes cuenta GNB?</div>
+      <a href="#" class="onboarding-pill">👤 Apertura digital de cuenta →</a>
+      <a href="snowflake.html" class="onboarding-pill">❄️ Ver dashboard Snowflake →</a>
+      <a href="arquitectura.html" class="onboarding-pill">🏗️ Arquitectura técnica →</a>
     </div>
-  </div>
 
+  </aside>
 </main>
+
+<!-- ═══════════════════════════ BOTTOM NAV ═══════════════════════════ -->
+<div class="bottom-nav">
+  <div class="nav-info" id="step-info">Paso 1 de 6 · Selección de garantía</div>
+  <div class="nav-buttons">
+    <button class="btn-secondary" id="btn-prev" onclick="prevStep()" style="opacity:0.4">← Anterior</button>
+    <button class="btn-primary" id="btn-next" onclick="nextStep()">Continuar →</button>
+  </div>
+</div>
+
 <script src="app.js"></script>
-<script>
-function expandDetail(id) {
-  const el = document.getElementById(id);
-  if (!el) return;
-  el.style.display = el.style.display === 'block' ? 'none' : 'block';
-}
-</script>
 </body>
 </html>
